@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('images/main.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            background-attachment: fixed;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+      background-color: #b3d9ea; /* Light blue background color */
+      border-radius: 25px; /* Rounded corners */
+      padding: 15px 30px; /* Adjusted padding for better aesthetics */
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: black;
+      text-decoration: none;
+    }
+
+    .navbar-brand span:hover {
+      text-decoration: none;
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 30px; /* Proper spacing between links */
+    }
+
+    .navbar .nav-link {
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+    }
+
+    .navbar .nav-link:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+
+    .btn-join-us {
+      background-color: #0056b3; /* Dark blue for the button */
+      color: white;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 25px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow for emphasis */
+    }
+
+    .btn-join-us:hover {
+      background-color: #003f7d; /* Slightly darker shade on hover */
+    }
+        /* Main content styling */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background: lightblue; /* Semi-transparent background */
+            border: 2px lightblue; /* Transparent border */
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px; /* Limit the width */
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: black;
+        }
+
+        .btn-get-started {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px #003f7d;
+            border-radius: 25px;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-get-started:hover {
+            background-color: #0056b3;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html">
+                <img src="images/images.png" alt="Logo">
+                <span>Air University</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="portals.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                </ul>
+                <a href="academics.html" class="btn btn-join-us ms-3">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to Air University</h1>
+        <p>Federally chartered public sector university <br> </p>
+         <p> Air University aspires to be among the leading national universities,
+           excelling in teaching and public service. <br> </p>
+         <p> The mission of Air University is to achieve excellence in teaching,
+           integrity of character and a passion for lifelong learning. </p>
+.</p>
+        <a href="portals.html" class="btn-get-started">Get Started</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - Air University</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-image: url(images/main.jpg);
+      background-size: cover;
+      height: 100vh;
+      background-attachment: fixed;
+    }
+
+    .navbar {
+      background-color: lightblue;
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 20px;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: black;
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 15px;
+      margin-right: 20px;
+    }
+
+    .navbar .nav-link {
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+    }
+
+    .navbar .nav-link:hover {
+      color: #0056b3;
+    }
+
+   
+    .btn-join-us {
+      background-color: #0056b3; /* Dark blue for the button */
+      color: white;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 25px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow for emphasis */
+    }
+
+    .btn-join-us:hover {
+      background-color: #003f7d; /* Slightly darker shade on hover */
+    }
+    .container {
+      max-width: 800px;
+      margin: 120px auto 100px;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #0056b3;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .section-heading {
+      color: #0056b3;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0056b3;
+      box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.1);
+    }
+
+    .requirements-list {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .requirements-list li {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+
+    .btn2 {
+      background-color: #0056b3;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: auto;
+      min-width: 150px;
+    }
+
+    .btn2:hover {
+      background-color: #003d82;
+      transform: translateY(-2px);
+    }
+
+    .submit-btn-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn1 {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.2s;
+    }
+    .bottom-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 20;
+      width: 90%;
+      justify-content: space-between;
+    }
+
+    .back-button, .next-button {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      color: white;
+    }
+
+    .back-button:hover, .next-button:hover {
+      background-color: #003f7d;
+      border-color: #003f7d;
+    }
+  </style>
+</head>
+<body>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="homepage.html">
+            <img src="images/images.png" alt="Logo">
+            <span>Air University</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="portals.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-join-us ms-3">Join Us</a>
+        </div>
+    </div>
+</nav>
+  <div class="container">
+    <h2>Admission Form</h2>
+
+    <div class="section">
+      <div class="section-heading">Eligibility Criteria</div>
+      <ul class="requirements-list">
+        <li>Must have completed higher secondary education or equivalent.</li>
+        <li>Minimum of 60% in the relevant subject stream.</li>
+        <li>Good communication skills in English.</li>
+        <li>Valid national ID and relevant documents.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">Admission Requirements</div>
+      <p>Please fill out the form below to apply for the admission process.</p>
+      <form>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="program">Program Applied For</label>
+          <select id="program" name="program" required>
+            <option value="">Select a program</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="postgraduate">Postgraduate</option>
+            <option value="phd">PhD</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="statement">Statement of Purpose</label>
+          <textarea id="statement" name="statement" rows="5" placeholder="Tell us about your academic goals and why you chose Air University" required></textarea>
+        </div>
+
+        <div class="submit-btn-container">
+          <button type="submit" class="btn2">Submit Application</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">Scholarships</div>
+      <p>Air University offers the following scholarships:</p>
+      <ul class="requirements-list">
+        <li>Merit-based Scholarships for top performers.</li>
+        <li>Need-based Scholarships for students facing financial hardships.</li>
+        <li>Sports Scholarships for outstanding athletes.</li>
+        <li>Scholarships for students with disabilities.</li>
+      </ul>
+      <p>To apply for scholarships, please include the required documentation along with your admission application.</p>
+    </div>
+  </div>
+
+  <div class="bottom-buttons">
+    <a href="academics.html" class="btn1 back-button">Back page</a>
+    <a href="events.html" class="btn1 next-button">Next Page</a>
+  </div>
+</body>
+</html>
